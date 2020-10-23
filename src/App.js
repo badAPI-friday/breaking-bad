@@ -2,6 +2,7 @@ import "./app.css";
 import Button from "./components/Button";
 import Header from "./components/Header";
 import Quote from "./components/Quote";
+import Card from "./components/Card";
 import { getQuoteRandom } from "./utils/api";
 import { createElement /*styled*/ } from "./utils/elements";
 
@@ -20,8 +21,14 @@ function App() {
       quote: randomquote.quote,
       author: randomquote.author,
     });
+    const correctCard = Card(randomquote.author);
+    cardsContainer.append(correctCard);
     quotesContainer.append(quoteElement);
   }
+
+  const cardsContainer = createElement("section", {
+    className: "cards-container",
+  });
 
   // const clearContainer = () => {
   //   quotesContainer.innerHTML = "";
@@ -31,6 +38,7 @@ function App() {
     innerText: "Load Random Quote",
     onclick: () => {
       quotesContainer.innerHTML = "";
+      cardsContainer.innerHTML = "";
       loadQuotes();
     },
   });
@@ -49,7 +57,7 @@ function App() {
   loadQuotes();
 
   const main = createElement("main", {
-    children: [quotesContainer, newQuoteButton],
+    children: [quotesContainer, cardsContainer, newQuoteButton],
   });
 
   const container = createElement("div", {
