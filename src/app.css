@@ -17,6 +17,8 @@
 html {
   font-size: 16px;
   font-family: "Vesper Libre", serif;
+  color: var(--font-color-primary);
+  background: var(--bg-primary);
 }
 
 body {
@@ -31,4 +33,6 @@ body {
 
 button {
   font-family: "Roboto", sans-serif;
+  background: var(--button-color);
+  color: var(--bg-primary);
 }
