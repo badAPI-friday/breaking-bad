@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Vesper+Libre:wght@400;700&display=swap");
+
 *,
 *::before,
 *::after {
@@ -5,18 +8,31 @@
 }
 
 :root {
-  --bg-primary: rgb(48, 118, 209);
+  --bg-primary: #e0dbb1;
+  --font-color-primary: #1f261a;
+  --highlight-color: #b46040;
+  --button-color: #355b41;
 }
 
 html {
   font-size: 16px;
+  font-family: "Vesper Libre", serif;
+  color: var(--font-color-primary);
+  background: var(--bg-primary);
 }
 
 body {
   margin: 0;
   background: rgb(18, 27, 27);
+  font-family: "Vesper Libre", serif;
 }
 
 .bg-primary {
   background: var(--bg-primary);
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  background: var(--button-color);
+  color: var(--bg-primary);
 }
