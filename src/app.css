@@ -45,3 +45,7 @@ button {
   color: var(--bg-primary);
   min-height: 200px;
 }
+
+.cards-container {
+  margin: 5px;
+}
