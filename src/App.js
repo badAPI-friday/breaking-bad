@@ -1,5 +1,5 @@
 import "./app.css";
-// import Button from "./components/Button";
+import Button from "./components/Button";
 import Header from "./components/Header";
 import Quote from "./components/Quote";
 import { getQuoteRandom } from "./utils/api";
@@ -23,6 +23,18 @@ function App() {
     quotesContainer.append(quoteElement);
   }
 
+  // const clearContainer = () => {
+  //   quotesContainer.innerHTML = "";
+  // };
+
+  const newQuoteButton = Button({
+    innerText: "Load Random Quote",
+    onclick: () => {
+      quotesContainer.innerHTML = "";
+      loadQuotes();
+    },
+  });
+
   // async function loadQuotes(quote, author) {
   //   const quotes = await getQuoteRandom(quote, author);
   //   const quoteElement = quotes.map((randomquote) =>
@@ -37,7 +49,7 @@ function App() {
   loadQuotes();
 
   const main = createElement("main", {
-    children: [quotesContainer],
+    children: [quotesContainer, newQuoteButton],
   });
 
   const container = createElement("div", {
