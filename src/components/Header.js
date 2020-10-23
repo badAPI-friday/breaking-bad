@@ -1,5 +1,5 @@
 import "./header.css";
-import logoSrc from "../assets/logo.png";
+import logoSrc from "../assets/bb_logo.png";
 import { createElement } from "../utils/elements";
 
 function Header() {
@@ -8,9 +8,13 @@ function Header() {
     alt: "Logo",
   });
 
+  const title = createElement("h1", {
+    innerText: "Breaking Bad Quotes Quiz",
+  });
+
   const header = createElement("header", {
     className: "header",
-    children: [logo],
+    children: [logo, title],
   });
   return header;
 }

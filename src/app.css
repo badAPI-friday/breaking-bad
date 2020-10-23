@@ -23,7 +23,6 @@ html {
 
 body {
   margin: 0;
-  background: rgb(18, 27, 27);
   font-family: "Vesper Libre", serif;
 }
 
@@ -34,5 +33,14 @@ body {
 button {
   font-family: "Roboto", sans-serif;
   background: var(--button-color);
+  color: var(--bg-primary);
+}
+
+.quotes-container {
+  border: 1px solid var(--font-color-primary);
+  border-radius: 10px;
+  background: var(--button-color);
+  padding: 10px;
+  margin: 5px;
   color: var(--bg-primary);
 }
