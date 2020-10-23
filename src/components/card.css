@@ -5,6 +5,7 @@
   border: solid 1px black;
   align-items: center;
   border-radius: 10px;
+  margin: 20px;
 }
 
 .author-card > img {

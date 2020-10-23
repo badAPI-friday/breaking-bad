@@ -1,11 +1,10 @@
 import "./card.css";
 import { createElement } from "../utils/elements";
 
-function Card(author) {
+function Card(imgSrc, author) {
   const authorImage = createElement("img", {
-    src:
-      "https://images.amcnetworks.com/amc.com/wp-content/uploads/2015/04/cast_bb_700x1000_walter-white-lg.jpg",
-    alt: "Picture of ...",
+    src: imgSrc,
+    alt: `Picture of ${author}`,
   });
 
   const authorName = createElement("p", {
