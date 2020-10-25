@@ -8,9 +8,10 @@
 }
 
 :root {
-  --bg-primary: #e0dbb1;
-  --font-color-primary: #1f261a;
-  --highlight-color: #b46040;
+  --bg-primary: #355b41;
+  --bg-secondary: black;
+  --font-color-primary: white;
+  --highlight-color: #3fb23e;
   --button-color: #355b41;
 }
 
@@ -32,26 +33,31 @@ body {
 
 button {
   font-family: "Roboto", sans-serif;
-  background: var(--button-color);
-  color: var(--bg-primary);
+  background: white;
+  color: black;
 }
 
 main {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .quotes-container {
   border: 1px solid var(--font-color-primary);
   border-radius: 10px;
-  background: var(--button-color);
+  background: var(--bg-secondary);
   padding: 10px;
-  margin: 5px;
-  color: var(--bg-primary);
-  min-height: 200px;
+  margin: 20px;
+  color: var(--highlight-color);
+  min-height: 100px;
+  text-align: center;
+  width: 70vw;
 }
 
 .cards-container {
-  margin: 5px;
+  margin: 5px 0;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
