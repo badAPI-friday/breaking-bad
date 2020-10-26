@@ -1,7 +1,7 @@
 import "./card.css";
 import { createElement } from "../utils/elements";
 
-function Card(imgSrc, author) {
+function Card(imgSrc, author, action) {
   const authorImage = createElement("img", {
     src: imgSrc,
     alt: `Picture of ${author}`,
@@ -11,9 +11,12 @@ function Card(imgSrc, author) {
     innerText: author,
   });
 
-  const authorCard = createElement("div", {
+  const authorCard = createElement("button", {
     className: "author-card",
     children: [authorImage, authorName],
+    onclick: () => {
+      action(author);
+    },
   });
   return authorCard;
 }
