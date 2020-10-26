@@ -28,12 +28,11 @@ function App() {
     className: "quotes-container",
   });
 
-  async function loadQuotes(quote, author /*action*/) {
+  async function loadQuotes(quote, author) {
     const randomquote = await getQuoteRandom(quote, author);
     const quoteElement = Quote({
       quote: randomquote.quote,
       author: randomquote.author,
-      // solution,
     });
 
     rightAnswer = randomquote.author;
@@ -69,14 +68,6 @@ function App() {
 
     const cards = [correctCard, falseCard1, falseCard2];
     shuffle(cards);
-
-    // function solution() {
-    //   if (()) {
-    //     alert("You are right!");
-    //   } else {
-    //     alert("You are wrong!");
-    //   }
-    // }
 
     cardsContainer.append(...cards);
     quotesContainer.append(quoteElement);
