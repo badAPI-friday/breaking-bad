@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.card--quote {
+}
+
+.quote__text {
+  margin: 1rem;
+}
+
+.author__name {
+  visibility: hidden;
+  margin: 0;
+  font-size: 0.5rem;
+}
+
+.quotemarks {
+  font-size: 5rem;
+  color: #b46040;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.completequote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quote__withmarks {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whosaidit {
+  font-family: "Roboto";
+  background: linear-gradient(160deg, #b46040, #82462e);
+  padding: 1rem;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
