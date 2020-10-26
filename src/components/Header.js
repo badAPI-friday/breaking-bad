@@ -1,10 +1,10 @@
 import "./header.css";
-import logoSrc from "../assets/bb_logo.png";
+// import logoSrc from "../assets/bb_logo.png";
 import { createElement } from "../utils/elements";
 
 function Header() {
   const logo = createElement("img", {
-    src: logoSrc,
+    src: "https://i.ebayimg.com/images/g/uZgAAOSwj61cavG1/s-l300.jpg",
     alt: "Logo",
   });
 

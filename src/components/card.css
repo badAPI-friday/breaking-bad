@@ -1,0 +1,19 @@
+.author-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  border-radius: 10px;
+  border: 3px solid var(--highlight-color);
+  margin: 20px;
+  background-color: var(--highlight-color);
+}
+
+.author-card > img {
+  height: 300px;
+  width: 290px;
+  object-fit: cover;
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  object-position: top;
+}

@@ -1,7 +1,9 @@
 .button {
   border-radius: 10px;
   padding: 0.2em 0.5em;
-  border: 1px solid #333;
+  border: 1px #333;
+  height: 80px;
+  width: 300px;
 }
 
 .button:active {
