@@ -1,9 +1,16 @@
 .button {
   border-radius: 10px;
-  padding: 0.2em 0.5em;
+  padding: 1rem;
   border: 1px solid #333;
+  box-shadow: 1rem 1rem 3rem #1f261a;
+  background: linear-gradient(160deg, #355b41, #1e3f29);
+  cursor: pointer;
 }
 
 .button:active {
-  background: grey;
+  background: #b46040;
+}
+
+.button:focus {
+  border: solid 3px #b46040;
 }

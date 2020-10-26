@@ -9,6 +9,7 @@ import {
   getCharacterRandom,
 } from "./utils/api";
 import { createElement /*styled*/ } from "./utils/elements";
+import { shuffle } from "./utils/arrays";
 
 // const PrimaryButton = styled(Button, "bg-primary");
 
@@ -27,19 +28,51 @@ function App() {
     });
 
     const imgElement = await getMatchingImg(randomquote);
-    const correctCard = Card(imgElement.img, randomquote.author);
+    const correctCard = Card(imgElement.img, randomquote.author, correctAnswer);
 
     const randomcharacter1 = await getCharacterRandom();
-    let falseCard1 = Card(randomcharacter1.img, randomcharacter1.name);
-    if (falseCard1 === correctCard) {
-      falseCard1 = Card(randomcharacter1.img, randomcharacter1.name);
+    let falseCard1 = Card(
+      randomcharacter1.img,
+      randomcharacter1.name,
+      false1Answer
+    );
+    if (randomcharacter1.name === randomquote.author) {
+      await getCharacterRandom();
     }
     const randomcharacter2 = await getCharacterRandom();
-    let falseCard2 = Card(randomcharacter2.img, randomcharacter2.name);
-    if (falseCard2 === falseCard1) {
-      falseCard2 = Card(randomcharacter2.img, randomcharacter2.name);
+    let falseCard2 = Card(
+      randomcharacter2.img,
+      randomcharacter2.name,
+      false2Answer
+    );
+    if (randomcharacter2.name === randomcharacter1.name) {
+      await getCharacterRandom();
     }
-    cardsContainer.append(correctCard, falseCard1, falseCard2);
+
+    function correctAnswer() {
+      correctCard.classList.add("correctanswer");
+      alert("Yepp, that's correct!");
+    }
+
+    function false1Answer() {
+      falseCard1.classList.add("falseanswer");
+      alert("Beep, that's wrong!");
+    }
+
+    function false2Answer() {
+      falseCard2.classList.add("falseanswer");
+      alert("Nope, you got the wrong guy!");
+    }
+
+    // correctCard.addEventListener(onclick, correctAnswer() => {
+    //   correctCard.classList.add("correctanswer");
+    //   alert("Correct!");
+    // });
+
+    let cardArray = [correctCard, falseCard1, falseCard2];
+    shuffle(cardArray);
+
+    cardsContainer.append(...cardArray);
     quotesContainer.append(quoteElement);
   }
 
@@ -47,29 +80,15 @@ function App() {
     className: "cards-container",
   });
 
-  // const clearContainer = () => {
-  //   quotesContainer.innerHTML = "";
-  // };
-
   const newQuoteButton = Button({
-    innerText: "Load Random Quote",
+    innerText: "Get me another quote!",
+    onfocus: () => {},
     onclick: () => {
       quotesContainer.innerHTML = "";
       cardsContainer.innerHTML = "";
       loadQuotes();
     },
   });
-
-  // async function loadQuotes(quote, author) {
-  //   const quotes = await getQuoteRandom(quote, author);
-  //   const quoteElement = quotes.map((randomquote) =>
-  //     Quote({
-  //       quote: randomquote.quote,
-  //       author: randomquote.author,
-  //     })
-  //   );
-  //   quotesContainer.append(quoteElement);
-  // }
 
   loadQuotes();
 

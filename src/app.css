@@ -22,7 +22,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 5%;
   font-family: "Vesper Libre", serif;
 }
 
@@ -43,16 +43,41 @@ main {
 .quotes-container {
   border: 1px solid var(--font-color-primary);
   border-radius: 10px;
-  background: var(--button-color);
-  padding: 10px;
-  margin: 5px;
+  background: linear-gradient(160deg, #355b41, #1e3f29);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
   color: var(--bg-primary);
-  min-height: 200px;
+  min-height: 100px;
+  box-shadow: 1rem 1rem 3rem #1f261a;
+  padding-top: 1rem;
+  width: fit-content;
 }
 
 .cards-container {
   margin: 5px;
+  margin-bottom: 5rem;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+
+.correctcard {
+  background: transparent;
+  width: 300px;
+  padding: 0;
+  margin: 20px;
+  border: none;
+}
+
+.falsecard {
+  background: transparent;
+  width: 300px;
+  padding: 0;
+  margin: 20px;
+  border: none;
+}
+
+.correctanswer {
+  border: solid 10px green;
 }
