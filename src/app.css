@@ -51,9 +51,11 @@ main {
   padding: 10px;
   margin: 20px;
   color: var(--highlight-color);
-  min-height: 100px;
+  min-height: 200px;
   text-align: center;
   width: 70vw;
+  display: flex;
+  align-items: center;
 }
 
 .cards-container {

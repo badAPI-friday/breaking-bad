@@ -2,7 +2,7 @@ import "./quote.css";
 import { createElement } from "../utils/elements";
 
 function Quote({ quote }) {
-  const quoteText = createElement("blockquote", {
+  const quoteText = createElement("q", {
     className: "quote-text",
     innerText: quote,
   });
