@@ -9,6 +9,12 @@
   background-color: var(--highlight-color);
 }
 
+.author-card:hover {
+  background-color: yellow;
+  border-color: yellow;
+  color: black;
+}
+
 .author-card > img {
   height: 300px;
   width: 290px;

@@ -52,10 +52,10 @@ main {
   margin: 20px;
   color: var(--highlight-color);
   min-height: 200px;
-  text-align: center;
-  width: 70vw;
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 70vw;
 }
 
 .cards-container {
