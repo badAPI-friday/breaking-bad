@@ -9,6 +9,7 @@ import {
   getCharacterRandom,
 } from "./utils/api";
 import { createElement /*styled*/ } from "./utils/elements";
+import { shuffle } from "./utils/arrays";
 
 // const PrimaryButton = styled(Button, "bg-primary");
 
@@ -29,17 +30,22 @@ function App() {
     const imgElement = await getMatchingImg(randomquote);
     const correctCard = Card(imgElement.img, randomquote.author);
 
-    const randomcharacter1 = await getCharacterRandom();
+    let randomcharacter1 = await getCharacterRandom();
+    while (randomcharacter1.name === randomquote.author) {
+      randomcharacter1 = await getCharacterRandom();
+    }
     let falseCard1 = Card(randomcharacter1.img, randomcharacter1.name);
-    if (falseCard1 === correctCard) {
-      falseCard1 = Card(randomcharacter1.img, randomcharacter1.name);
+
+    let randomcharacter2 = await getCharacterRandom();
+    while (randomcharacter2.name === randomcharacter1.name) {
+      randomcharacter2 = await getCharacterRandom();
     }
-    const randomcharacter2 = await getCharacterRandom();
     let falseCard2 = Card(randomcharacter2.img, randomcharacter2.name);
-    if (falseCard2 === falseCard1) {
-      falseCard2 = Card(randomcharacter2.img, randomcharacter2.name);
-    }
-    cardsContainer.append(correctCard, falseCard1, falseCard2);
+
+    const cards = [correctCard, falseCard1, falseCard2];
+    shuffle(cards);
+
+    cardsContainer.append(...cards);
     quotesContainer.append(quoteElement);
   }
 
